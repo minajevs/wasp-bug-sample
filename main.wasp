@@ -1,0 +1,21 @@
+app waspBugSample {
+  wasp: {
+    version: "^0.15.2"
+  },
+  title: "wasp-bug-sample"
+}
+
+query getFirstName {
+  fn: import {getFirstName} from "@src/getFirstName",
+  entities: []
+}
+
+query getFullName {
+  fn: import {getFullName} from "@src/getFullName",
+  entities: []
+}
+
+route RootRoute { path: "/", to: MainPage }
+page MainPage {
+  component: import { MainPage } from "@src/MainPage"
+}
